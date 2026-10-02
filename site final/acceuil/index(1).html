@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Officiel - 4ème HP</title>
+    <link rel="stylesheet" href="style(1).css">
+</head>
+<body>
+
+    <!-- Barre de navigation -->
+    <header class="main-header">
+        <div class="logo">4ème HP</div>
+        <nav class="nav-menu">
+            <a href="index.html" class="active">Accueil</a>
+            
+            <!-- Menu Déroulant / Dropdown -->
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <section id="Resumé">RESUME</section>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Biologie</a>
+                </div>
+            </div>
+            
+            <a href="#devoirs-section">Devoirs</a>
+        </nav>
+        
+        <!-- Espace Photo de Profil -->
+        <div class="profile-area">
+            <img src="hp.jpg" alt="Photo de profil" class="profile-pic">
+        </div>
+    </header>
+
+    <!-- Contenu Principal -->
+    <main class="container">
+        <section class="welcome-banner">
+            <h1>BIENVENUE SUR LE SITE DE LA 4ème HP</h1>
+            <p>Votre espace de partage de cours, devoirs et communication en temps réel.</p>
+        </section>
+
+        <!-- Espace Téléchargement des Devoirs -->
+        <section id="devoirs-section" class="card-section">
+            <h2>📚 Devoirs et Fichiers Récents</h2>
+            <div class="files-grid">
+                
+                
+                <div class="file-card">
+                    <h3>Devoir d'Informatique</h3>
+                    <p>Date limite : Prochain cours</p>
+                    <span class="file-info">Format: PDF</span>
+                    <!-- Lien vers le fichier local dans le dossier devoirs -->
+                    <a href="PDF/0520-pdf-php-fonctions-formulaire.pdf" download class="btn-download">Télécharger</a>
+                </div>
+
+                
+                <div class="file-card">
+                    <h3>TP d'Informatique</h3>
+                    <p>Exercice sur les algorithmes</p>
+                    <span class="file-info">Format: DOCX</span>
+                    <a href="devoirs/tp-info.docx" download class="btn-download">Télécharger</a>
+                </div>
+
+                 <div class="file-card">
+                    <h3>Resumé de Biologie</h3>
+                    <p>Date limite de présentation : Prochain cours</p>
+                    <span class="file-info">Format: PDF</span>
+                    <!-- Lien vers le fichier local dans le dossier devoirs -->
+                    <a href="PDF/Biologie 6ème HP.pdf" download class="btn-download">Télécharger</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Formulaire de Message (Simulateur de discussion) -->
+        <section class="chat-section">
+            <h2>💬 Messagerie de la Classe</h2>
+            <form id="chat-form">
+                <input type="text" id="username" placeholder="Votre nom ou pseudonyme" required>
+                <textarea id="message-text" placeholder="Écrivez un message pour la classe..." required></textarea>
+                <button type="submit" class="btn-send">Envoyer le message</button>
+            </form>
+            <div id="chat-box" class="chat-box">
+                <!-- Les messages s'afficheront ici grâce au JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="main-footer">
+        <p>&copy; 2026 - Classe de 4ème HP. Tous droits réservés.</p>
+        <div class="social-icons">
+            <!-- Remplacer les '#' par vos liens locaux ou spécifiques plus tard -->
+            <a href="https://google.com" class="icon-link">🌐</a>
+            <a href="mailto:wangkaiwen330@gmail.com" class="icon-link">📧</a>
+        </div>
+    </footer>
+
+    <script src="script(1).js"></script>
+</body>
+</html>

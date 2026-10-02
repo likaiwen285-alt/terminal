@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    /* Variables CSS */
+    --var-text-color: #fff;
+    --var-black-color: #333;
+    --var-secondary-black-color: rgba(0, 0, 0, 0.3);
+    --var-color-text: rgba(128, 128, 128, 0.4);
+    --var-hover-color: rgba(0, 255, 255, 0.582);
+    --var-bg-color: #7743e9;
+    --var-secondary-color: #6e51cf;
+    --var-bg-light: #f0f4ff;
+    --var-bg-dark: #d3c9f3;
+}
+
+body {
+    background-image: url("img(2)/images (5).jpg");
+    color: var(--var-text-color);
+    font-family: sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center; /* Centre l'image de fond sur tous les écrans */
+}
+
+header{
+    background-color: aquamarine;
+    min-height: 4rem; /* Changement de height à min-height pour éviter les chevauchements */
+    padding: 1rem 2rem; /* padding ajusté pour le mobile */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    flex-wrap: wrap; /* Permet au logo et au bouton de s'empiler si l'écran est minuscule */
+    gap: 10px;
+}
+
+header h2{
+    font-size: 1.5rem; /* Taille réduite pour mieux passer sur mobile */
+    color: var(--var-black-color);
+}
+
+header nav .btn-mode {
+    text-decoration: none;
+    background: rgba(0, 55, 205, 0.562);
+    padding: 0.6rem 1.2rem;
+    border-radius: 7px;
+    color: var(--var-bg-light);
+    transition: 0.4s;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+header nav .btn-mode:hover {
+    background-color: var(--var-bg-dark);
+    color: var(--var-black-color);
+} 
+
+main{
+    padding: 1.5rem;
+    max-width: 1200px; /* Empêche le contenu de devenir trop large sur grand écran */
+    margin: 0 auto; /* Centre la zone de contenu principal */
+}
+
+p{
+    color: rgb(122, 104, 104);
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;    
+}
+
+#tbl{
+    width: 100%;
+    margin-top: 2rem;
+    padding: 2.5rem;
+    background-color: rgba(25, 25, 112, 0.85); /* Légèrement plus opaque pour la lisibilité */
+    border-radius: 12px; 
+    
+    /* CHANGER FLEX EN GRID POUR LE RESPONSIVE */
+    display: grid;
+    /* Crée automatiquement des colonnes de 280px minimum dès qu'il y a de la place */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 15px; /* Espace uniforme entre les boutons horizontalement et verticalement */
+}
+
+/* Style des boutons de la section #tbl */
+#tbl .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.5rem; /* Utilisation de min-height fixe au lieu de 10vh pour éviter les distorsions sur mobile */
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    padding: 15px;
+    background-color: #00bcd4;
+    color: #1a1a1a;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-align: center;
+}
+
+#tbl .btn:hover {
+    background-color: #00e5ff;
+    color: #1a1a1a;
+}
+
+#tbl .btn:active {
+    transform: scale(0.97);
+}
+
+/* --- AJOUT DES MEDIA QUERIES POUR AJUSTEMENTS FINAUX --- */
+
+/* Pour les écrans d'ordinateurs et tablettes en paysage (Plus grand que 768px) */
+@media (min-width: 768px) {
+    header h2 {
+        font-size: 2rem; /* Le titre redevient grand sur PC */
+    }
+    main {
+        padding: 3rem;
+    }
+    #tbl {
+        padding: 3rem;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,356 @@
+
+* {  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --var-bg-color: #7743e9;
+    --var-secondary-color: #6e51cf;
+    --var-text-color: #fff;
+    --var-text-color-dark: #000000;
+    --var-bg-light: #f0f4ff;
+    --var-bg-dark: #d3c9f3;
+}
+
+body {
+    background-color: var(--var-bg-light);
+    color: var(--var-text-color-dark);
+    font-family: sans-serif; /* Ajout d'une police propre */
+}
+
+/* --- HEADER --- */
+header {
+    height: 4rem;
+    background-color: #fff;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+}
+
+header h2 {
+    font-size: 1.5rem;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--var-text-color-dark);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--var-secondary-color);
+}
+
+/* Correction du bouton de connexion */
+header button {
+    background-color: var(--var-secondary-color);
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header button a {
+    text-decoration: none;
+    color: var(--var-text-color);
+    font-weight: 500;
+}
+
+header button:hover {
+    background-color: var(--var-text-color);
+    border: 1px solid var(--var-secondary-color);
+}
+
+header button:hover a {
+    color: var(--var-text-color-dark);
+}
+
+/* --- MAIN & HERO --- */
+main {
+    padding: 2rem;
+}
+
+
+#hero {
+    width: 100%;
+    min-height: 70vh; /* Utilisation de min-height pour éviter les débordements */
+    border-radius: 12px; /* Coins légèrement plus arrondis comme sur l'image */
+    padding: 2rem;
+    background-image:url("img/hp.jpg");
+    background-size: cover;      /* L'image prend tout l'espace sans se déformer */
+      /* L'image reste bien centrée */
+    background-repeat: no-repeat; /* Évite que l'image se répète en mosaïque */
+    background-attachment: fixed; /* L'image reste fixe quand on fait défiler la page */
+    color: var(--var-text-color-dark);
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+#hero .gauche {
+    flex: 1;
+    color: var(--var-text-color);
+}
+
+#hero .gauche h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+#hero .gauche h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+#hero .gauche p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.gauche button {
+    background-color: var(--var-text-color);
+    color: var(--var-secondary-color);
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gauche button:hover {
+    background-color: var(--var-bg-dark);
+    color: var(--var-text-color-dark);
+}
+
+#hero .droite {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.droite img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* --- SECTION REGLES --- */
+#regle {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+#regle h1 {
+    text-align: center;
+    color: var(--var-bg-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    position: relative;
+}
+
+#regle p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+#regle ul {
+    list-style-type: none; /* Supprime les puces par défaut */
+}
+
+#regle ul li {
+    font-size: 1.1rem;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    background-color: var(--var-bg-light);
+    border-left: 5px solid var(--var-bg-color);
+    border-radius: 4px;
+    font-weight: 500;
+}
+/* --- SECTION MEMBRES (Trombinoscope direct) --- */
+#Membres {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.table-container {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+/* Style de base pour grands écrans (Ordinateurs) */
+th {
+    background-color: var(--var-bg-color);
+    border-radius: 4px;
+    color: var(--var-text-color);
+    padding: 14px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+tbody tr:hover {
+    background-color: var(--var-bg-light);
+}
+
+/* Taille fixe pour les profils (images et icônes) */
+#Membres table img, 
+#Membres table i {
+    width: 55px !important;
+    height: 55px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+#Membres table i {
+    background-color: var(--var-bg-dark);
+    color: var(--var-secondary-color);
+    font-size: 55px; 
+}
+
+footer{
+        margin-top: 2rem ;
+        background-color: var(--var-secondary-color);
+        color: var(--var-text-color);
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+}
+
+/* ==========================================================================
+   MODE MOBILE (Écrans inférieurs à 768px - Format .apk)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    
+    #Membres {
+        padding: 1rem; /* Réduit l'espace sur les côtés sur mobile */
+    }
+
+    /* Masque l'en-tête violet du tableau qui ne tient pas sur mobile */
+    table thead {
+        display: none;
+    }
+
+    /* Force le tableau et ses composants à se comporter comme des blocs empilables */
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+
+    /* Transforme chaque ligne (tr) en une carte de profil individuelle */
+    table tbody tr {
+        margin-bottom: 1.5rem;
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 0.5rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+
+    /* Ajustements des cellules (td) */
+    table tbody td {
+        text-align: right; /* Aligne les valeurs à droite */
+        padding: 8px 12px;
+        border-bottom: 1px dashed #edf2f7;
+        font-size: 1rem;
+        position: relative;
+        display: flex;
+        justify-content: space-between; /* Sépare le titre de la valeur */
+        align-items: center;
+    }
+
+    /* Supprime la bordure pointillée sur la dernière ligne de la carte */
+    table tbody td:last-child {
+        border-bottom: none;
+    }
+
+    /* Centre la photo de profil en haut de la carte */
+    table tbody td:first-child {
+        justify-content: center;
+        background-color: var(--var-bg-light);
+        border-radius: 6px;
+        padding: 12px;
+    }
+    footer{
+        background-color: var(--var-secondary-color);
+        color: var(--var-text-color);
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Ajoute automatiquement les titres des colonnes devant les données sur mobile */
+    table tbody td:nth-child(2)::before { content: "Nom :"; font-weight: bold; color: var(--var-secondary-color); }
+    table tbody td:nth-child(3)::before { content: "Num Registre :"; font-weight: bold; color: var(--var-secondary-color); }
+    table tbody td:nth-child(4)::before { content: "Code d'Option :"; font-weight: bold; color: var(--var-secondary-color); }
+}
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+    
+    #hero .gauche h1 {
+        font-size: 2rem;
+    }
+    
+    .droite img {
+        max-width: 250px;
+    }
+    
+    #Membres img {
+        width: 100px;
+        height: 100px;
+        margin: 0.5rem;
+    }
+}

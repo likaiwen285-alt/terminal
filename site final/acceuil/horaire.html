@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horaire de la semaine</title>
+    <link rel="stylesheet" href="horaire.css">
+    <style>
+        /* --- Styles Généraux --- */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #fcfcfc;
+        }
+
+        /* --- En-tête --- */
+        header {
+            min-height: 4rem;
+            background-color: #fff3cd;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            position: sticky;
+            top: 0;
+        }
+        header h2 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        header nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+        header nav a {
+            text-decoration: none;
+            color: var(--var-text-color-dark, #000);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        /* --- Conteneur Principal --- */
+        main {
+            padding: 20px;
+            max-width: 1200px; /* Élargi pour accueillir les deux tableaux côte à côte */
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        /* --- STRUCTURE DE DIVISION DU TABLEAU --- */
+        .horaire-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Aligne les deux tableaux côte à côte sur PC */
+            gap: 0; /* Supprime l'espace pour donner l'illusion d'un seul tableau */
+            margin-top: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Fusion visuelle : Supprime la double bordure au centre quand ils sont côte à côte */
+        .partie-2 th:first-child, 
+        .partie-2 td:first-child {
+            border-left: none; 
+        }
+
+        /* --- Bloc Alerte / Communiqué --- */
+        .alert-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 4px;
+        }
+
+        /* ==========================================================================
+           MEDIA QUERIES : SÉPARATION DES DEUX PARTIES SUR ÉCRAN INTERMÉDIAIRE / MOBILE
+           ========================================================================== */
+        @media screen and (max-width: 900px) {
+            .horaire-wrapper {
+                grid-template-columns: 1fr; /* Empile la Partie 1 et la Partie 2 verticalement */
+                gap: 25px; /* Ajoute un espace visible entre les blocs sur mobile */
+                background: transparent;
+                box-shadow: none;
+            }
+
+            table {
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+                border-radius: 4px;
+            }
+
+            /* Rétablit la bordure gauche masquée sur PC pour le second tableau */
+            .partie-2 th:first-child, 
+            .partie-2 td:first-child {
+                border-left: 1px solid #ccc; 
+            }
+
+            header {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.8rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>4ème HP </h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="horaire.html" class="active">Horaire & Infos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>📅 Horaire de la Semaine & Infos</h1>
+        <p>Retrouvez ici le programme officiel des cours et les annonces de la direction.</p>
+        
+        <!-- Le conteneur principal regroupe les deux moitiés -->
+        <div class="horaire-wrapper">
+            
+            <!-- PREMIÈRE PARTIE : Lundi, Mardi, Mercredi (4 colonnes sur PC, devient 4 colonnes isolées sur Mobile) -->
+            <table class="partie-1">
+                <thead>
+                    <tr>
+                        <th>Heure</th>
+                        <th>Lundi</th>
+                        <th>Mardi</th>
+                        <th>Mercredi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>07h20-08h20</td>
+                        <td>Anglais</td>
+                        <td>Math</td>
+                        <td>Histoire</td>
+                    </tr>
+                    <tr>
+                        <td>08h20-09h10</td>
+                        <td>Anglais</td>
+                        <td>Math</td>
+                        <td>Psychologie</td>
+                    </tr>
+                    <tr>
+                        <td>09h10-10h00</td>
+                        <td>Français</td>
+                        <td>Anglais</td>
+                        <td>DIDIS</td>
+                    </tr>
+                    <tr>
+                        <td>10h15-11h05</td>
+                        <td>Français</td>
+                        <td>Anglais</td>
+                        <td>DIGEN</td>
+                    </tr>
+                    <tr>
+                        <td>11h05-11h55</td>
+                        <td>Biologie</td>
+                        <td>Psychologie</td>
+                        <td>DIGEN</td>
+                    </tr>
+                    <tr>
+                        <td>11h55-12h45</td>
+                        <td>Biologie</td>
+                        <td>Géographie</td>
+                        <td>Linguistique</td>
+                    </tr>
+                    <tr>
+                        <td>12h45-13h35</td>
+                        <td>-</td>
+                        <td>GYMNA</td>
+                        <td>Histoire</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- SECONDE PARTIE : Jeudi, Vendredi, Samedi (3 colonnes de cours + 1 colonne Heure répétée) -->
+            <table class="partie-2">
+                <thead>
+                    <tr>
+                        <th>Heure</th>
+                        <th>Jeudi</th>
+                        <th>Vendredi</th>
+                        <th>Samedi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>07h20-08h20</td>
+                        <td>CULTE</td>
+                        <td>Physique</td>
+                        <td>Pédagogie</td>
+                    </tr>
+                    <tr>
+                        <td>08h20-09h10</td>
+                        <td>Philosophie</td>
+                        <td>Français</td>
+                        <td>Musique</td>
+                    </tr>
+                    <tr>
+                        <td>09h10-10h00</td>
+                        <td>Philosophie</td>
+                        <td>Ecriture</td>
+                        <td>Pédagogie</td>
+                    </tr>
+                    <tr>
+                        <td>10h15-11h05</td>
+                        <td>Français</td>
+                        <td>Géographie</td>
+                        <td>Réligion</td>
+                    </tr>
+                    <tr>
+                        <td>11h05-11h55</td>
+                        <td>DIDIS</td>
+                        <td>Français</td>
+                        <td>EDVIE</td>
+                    </tr>
+                    <tr>
+                        <td>11h55-12h45</td>
+                        <td>ECM</td>
+                        <td>Informatique</td>
+                        <td>DESSIN</td>
+                    </tr>
+                    <tr>
+                        <td>12h45-13h35</td>
+                        <td>-</td>
+                        <td>Physique</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        
+        <div class="alert-box">
+            <h3>📢 Communiqué Important :</h3>
+            <p>N'oubliez pas de soumettre vos projets de fin d'études dans l'onglet "Devoirs" avant la fin de la semaine !</p>
+        </div>
+    </main>
+</body>
+</html>
+s

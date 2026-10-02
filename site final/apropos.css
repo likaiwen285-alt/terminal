@@ -1,0 +1,251 @@
+/* --- Styles Généraux --- */
+body {
+    background-color: #f4f6f9;
+    color: #334155;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Barre de Navigation --- */
+nav {
+    background-color: #1e293b;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
+nav a:hover, nav a.active {
+    color: #38bdf8;
+}
+
+/* --- Conteneur Principal --- */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    color: #0f172a;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.badge {
+    background-color: #38bdf8;
+    color: #0f172a;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+/* --- Profil du Concepteur --- */
+.creator-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 20px;
+    border-left: 6px solid #3b82f6;
+}
+.creator-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #0f172a;
+    margin: 0 0 5px 0;
+}
+.institution-text {
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+.meta-dates {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: #475569;
+    background: #e2e8f0;
+    padding: 10px 15px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-top: 15px;
+}
+
+/* --- Éléments Visuels --- */
+.image-banner {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-radius: 12px;
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3.5rem;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
+}
+.img-placeholder {
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    color: #64748b;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.func-list {
+    padding-left: 20px;
+}
+.func-list li {
+    margin-bottom: 15px;
+}
+.highlight {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* --- Architecture du Schéma Bloc --- */
+.diagram-container {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 25px 0;
+}
+.diagram-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+.block {
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 12px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    font-weight: bold;
+    color: #1e293b;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.block small {
+    font-weight: normal;
+    color: #475569;
+    display: block;
+    margin-top: 4px;
+}
+.block.blue-node {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #1e40af;
+}
+.block.green-node {
+    background: #f0fdf4;
+    border-color: #22c55e;
+    color: #166534;
+}
+.arrow {
+    font-size: 1.3rem;
+    color: #94a3b8;
+}
+.condition-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+.condition-split .block {
+    width: 100%;
+}
+
+/* --- Section Remerciements --- */
+.thanks-box {
+    background: linear-gradient(to right, #f0fdf4, #dcfce7);
+    border: 1px solid #bbf7d0;
+    padding: 20px;
+    border-radius: 12px;
+    color: #166534;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.thanks-icon {
+    font-size: 2.5rem;
+}
+.thanks-text {
+    margin: 0;
+}
+
+/* --- Styles pour la page devoirs.html (Cartes de téléchargement) --- */
+#liste-devoirs li {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+#liste-devoirs a {
+    background: #3b82f6;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+#liste-devoirs a:hover {
+    background: #2563eb;
+}
+
+/* --- Media Query Mobile --- */
+@media screen and (max-width: 600px) {
+    main {
+        margin: 15px;
+        padding: 15px;
+    }
+    nav a {
+        margin: 0 7px;
+        font-size: 0.9rem;
+    }
+    .condition-split {
+        grid-template-columns: 1fr;
+    }
+    .meta-dates {
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+    }
+    .thanks-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}
